@@ -3,7 +3,7 @@
 
 from __future__ import print_function
 
-import subprocess
+import os
 
 def is_in_profile(file, content):
     reader = open(file)

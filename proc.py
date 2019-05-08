@@ -3,6 +3,7 @@
 
 from __future__ import print_function
 
+import os
 import subprocess
 
 def exec_cmd_with_result_list(cmd):
