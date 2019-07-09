@@ -13,8 +13,8 @@ def exec_cmd_with_result_list(cmd):
 
 def run_as_user(user, cmd):
     subprocess.call(["su", user, "-c", cmd])
-    
+
 def is_root():
     if os.geteuid() != 0:
         return False
-    return True    
+    return True
