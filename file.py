@@ -24,6 +24,7 @@ def is_in_file(file, content):
 def set_to_file(file, content):
     is_existed = is_in_file(file, content)
     if False == is_existed:
-        os.system("echo '' >> ~/.profile")
-        profile_cmd = "echo '%s' >> ~/.profile" % content
+        profile_cmd = "echo '' >> %s" % file
+        os.system(profile_cmd)
+        profile_cmd = "echo '%s' >> %s" % (content, file)
         os.system(profile_cmd)
