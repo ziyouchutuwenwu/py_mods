@@ -6,7 +6,7 @@ from __future__ import print_function
 import os
 
 
-def is_in_profile(file, content):
+def is_in_file(file, content):
     reader = open(file)
 
     line = reader.readline()
@@ -21,12 +21,9 @@ def is_in_profile(file, content):
     return False
 
 
-def set_to_profile(cmd):
-    path = os.path.expanduser("~")
-    profile = path + "/" + ".profile"
-
-    is_existed = is_in_profile(profile, cmd)
+def set_to_file(file, content):
+    is_existed = is_in_file(file, content)
     if False == is_existed:
         os.system("echo '' >> ~/.profile")
-        profile_cmd = "echo '%s' >> ~/.profile" % cmd
+        profile_cmd = "echo '%s' >> ~/.profile" % content
         os.system(profile_cmd)
